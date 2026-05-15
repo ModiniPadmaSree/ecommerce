@@ -43,7 +43,7 @@ const CartPage = () => {
           const newItem = {
             product: data.product._id,
             name: data.product.name,
-            image: data.product.images[0].url,
+            image: data.product.images[0].url || '',
             price: data.product.price,
             stock: data.product.stock,
             qty,
