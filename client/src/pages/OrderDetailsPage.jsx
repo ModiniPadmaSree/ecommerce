@@ -6,21 +6,31 @@ const OrderDetailsPage = () => {
   const { id } = useParams();
   const [order, setOrder] = useState(null);
   const [loading, setLoading] = useState(true);
+useEffect(() => {
+  const fetchOrder = async () => {
+    try {
+      const token = localStorage.getItem('token');
 
-  useEffect(() => {
-    const fetchOrder = async () => {
-      try {
-        const { data } = await axios.get(`${API}/api/v1/order/${id}`);
-        setOrder(data.order);
-        setLoading(false);
-      } catch (error) {
-        console.error(error);
-        setLoading(false);
-      }
-    };
+      const config = {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      };
 
-    fetchOrder();
-  }, [id]);
+      const { data } = await axios.get(
+        `${API}/api/v1/order/${id}`,
+        config
+      );
+
+      setOrder(data.order);
+
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  fetchOrder();
+}, [id]);
 
   if (loading) return <h2>Loading...</h2>;
   if (!order) return <h2>Order not found</h2>;
