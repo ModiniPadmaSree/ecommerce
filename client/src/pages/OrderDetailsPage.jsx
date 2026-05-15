@@ -38,7 +38,7 @@ useEffect(() => {
 
   if (loading) return <h2>Loading...</h2>;
   if (!order) return <h2>Order not found</h2>;
-
+console.log("ORDER ITEMS:", order.orderItems);
   return (
     <div style={{ padding: "30px" }}>
       <h2>Order Details</h2>
