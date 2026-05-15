@@ -8,8 +8,19 @@ const stripePromise = loadStripe('pk_test_51RkxLvCmNCk36eUSScZeaSctqGPGzdUNkuSCn
 
 const PlaceOrderPage = () => {
   
-  const shippingInfo = JSON.parse(localStorage.getItem('shippingInfo')) || {};
-  const cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
+  const shippingInfo =
+  JSON.parse(localStorage.getItem('shippingInfo')) || {};
+
+const userInfo =
+  JSON.parse(localStorage.getItem('userInfo'));
+
+const userId = userInfo?._id || 'guest';
+
+const cartKey = `cartItems_${userId}`;
+
+const cartItems = JSON.parse(
+  localStorage.getItem(cartKey) || '[]'
+);
 
   const itemsPrice = cartItems.reduce((acc, item) => acc + item.price * item.qty, 0);
   const shippingPrice = itemsPrice > 100 ? 0 : 10;
@@ -45,6 +56,10 @@ const PlaceOrderPage = () => {
   };
 
   const placeOrderHandler = async () => {
+    if (cartItems.length === 0) {
+  alert('Cart is empty');
+  return;
+}
     try {
       const token = localStorage.getItem('token');
       const config = {
