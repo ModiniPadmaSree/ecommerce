@@ -30,9 +30,9 @@ const Footer = () => {
           <h3>Follow Us</h3>
           <div className={styles.socialIcons}>
             {/* Placeholder icons - you can use react-icons or images */}
-            <a href="#"><img src="/images/download.jpg" alt="facebook"/></a>
-            <a href="#"><img src="/images/twitter.png" alt="Twitter" /></a>
-            <a href="#"><img src="/images/ins.jpg" alt="Instagram" /></a>
+            <a href="/"><img src="/images/download.jpg" alt="facebook"/></a>
+            <a href="/"><img src="/images/twitter.png" alt="Twitter" /></a>
+            <a href="/"><img src="/images/ins.jpg" alt="Instagram" /></a>
           </div>
         </div>
       </div>
