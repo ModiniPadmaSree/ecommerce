@@ -20,7 +20,7 @@ if (!Array.isArray(cartItems)) {
       },
       unit_amount: Math.round(item.price * 100), // Stripe uses cents
     },
-    quantity: item.quantity,
+    quantity: item.quantity || item.qty,
   }));
 
   const session = await stripe.checkout.sessions.create({
