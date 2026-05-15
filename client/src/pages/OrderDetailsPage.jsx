@@ -92,19 +92,19 @@ useEffect(() => {
             }}
           >
             {/* Product Image */}
-            {item.product?.images?.length > 0 ? (
-              <img
-  src={item.image}
-  alt={item.name}
-  style={{
-    width: "120px",
-    height: "120px",
-    objectFit: "cover",
-    marginRight: "20px",
-  }}
-/>
-
-            ) : (
+          {item.image ? (
+  <img
+    src={item.image}
+    alt={item.name}
+    style={{
+      width: "120px",
+      height: "120px",
+      objectFit: "cover",
+      marginRight: "20px",
+      borderRadius: "6px"
+    }}
+  />
+) : (
               <div
                 style={{
                   width: "120px",
@@ -123,7 +123,7 @@ useEffect(() => {
 
             {/* Product Details */}
             <div>
-              <h4>{item.product?.name}</h4>
+              <h4>{item.name}</h4>
               <p>Price: ₹{item.price}</p>
               <p>Quantity: {item.quantity}</p>
               <p>Total: ₹{item.price * item.quantity}</p>
