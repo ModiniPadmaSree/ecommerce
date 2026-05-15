@@ -26,10 +26,14 @@ useEffect(() => {
 
     } catch (error) {
       console.error(error);
+
+    } finally {
+      setLoading(false);
     }
   };
 
   fetchOrder();
+
 }, [id]);
 
   if (loading) return <h2>Loading...</h2>;
