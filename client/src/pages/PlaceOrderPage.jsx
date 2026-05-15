@@ -7,8 +7,7 @@ const API = process.env.REACT_APP_API_URL;
 const stripePromise = loadStripe('pk_test_51RkxLvCmNCk36eUSScZeaSctqGPGzdUNkuSCnPBkoW8d9Awpkju95riVeTC33xtg55VxQrgUGLCIz0jW7xYFIKs600QroSExBV');
 
 const PlaceOrderPage = () => {
-  
-  const shippingInfo =
+const shippingInfo =
   JSON.parse(localStorage.getItem('shippingInfo')) || {};
 
 const userInfo =
@@ -21,7 +20,6 @@ const cartKey = `cartItems_${userId}`;
 const cartItems = JSON.parse(
   localStorage.getItem(cartKey) || '[]'
 );
-
   const itemsPrice = cartItems.reduce((acc, item) => acc + item.price * item.qty, 0);
   const shippingPrice = itemsPrice > 100 ? 0 : 10;
   const taxPrice = Number((0.15 * itemsPrice).toFixed(2));
