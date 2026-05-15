@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+
 import axios from 'axios';
 import styles from './PlaceOrderPage.module.css';
 import { loadStripe } from '@stripe/stripe-js';
@@ -7,7 +7,7 @@ const API = process.env.REACT_APP_API_URL;
 const stripePromise = loadStripe('pk_test_51RkxLvCmNCk36eUSScZeaSctqGPGzdUNkuSCnPBkoW8d9Awpkju95riVeTC33xtg55VxQrgUGLCIz0jW7xYFIKs600QroSExBV');
 
 const PlaceOrderPage = () => {
-  const navigate = useNavigate();
+  
   const shippingInfo = JSON.parse(localStorage.getItem('shippingInfo')) || {};
   const cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
 
