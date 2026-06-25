@@ -25,7 +25,7 @@ app.use(cookieParser());
 // CORS Configuration (Frontend will be separate service in K8s)
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || '*',
+    origin: process.env.FRONTEND_URL,
     credentials: true,
   })
 );
