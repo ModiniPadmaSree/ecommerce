@@ -1,51 +1,269 @@
+/* =========================================
+   NEXMART - AUTH FORM
+   ========================================= */
+
 .container {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 2rem;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: min(500px, calc(100% - 32px));
+
+  margin: 55px auto;
+
+  padding: 32px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #d1d3d6;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 8px 24px rgba(36, 59, 83, 0.12);
+
+  color: #26384a;
 }
 
+
+/* =========================================
+   HEADING
+   ========================================= */
+
 .heading {
+  position: relative;
+
+  margin: 0 0 30px;
+
+  padding-bottom: 14px;
+
+  color: #26384a;
+
   text-align: center;
-  margin-bottom: 1.5rem;
-  font-size: 1.75rem;
-  color: #333;
+
+  font-size: 1.85rem;
+
+  font-weight: 700;
+
+  letter-spacing: -0.3px;
 }
+
+
+/* Grey divider */
+
+.heading::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  width: 120px;
+  height: 2px;
+
+  transform: translateX(-50%);
+
+  background: #5b5d60;
+}
+
+
+/* Orange accent */
+
+.heading::before {
+  content: "";
+
+  position: absolute;
+  z-index: 1;
+
+  left: 50%;
+  bottom: -2px;
+
+  width: 50px;
+  height: 5px;
+
+  transform: translateX(-50%);
+
+  background: #e59a18;
+
+  border-radius: 5px;
+}
+
+
+/* =========================================
+   FORM
+   ========================================= */
 
 .form {
   display: flex;
+
   flex-direction: column;
+
+  width: 100%;
 }
+
+
+/* =========================================
+   FORM GROUP
+   ========================================= */
 
 .formGroup {
-  margin-bottom: 1rem;
+  margin-bottom: 19px;
 }
 
+
+/* =========================================
+   LABEL
+   ========================================= */
+
 .label {
-  font-weight: 600;
-  margin-bottom: 0.5rem;
   display: block;
+
+  margin-bottom: 7px;
+
+  color: #26384a;
+
+  font-size: 0.9rem;
+
+  font-weight: 700;
 }
+
+
+/* =========================================
+   INPUT
+   ========================================= */
 
 .input {
   width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+
+  padding: 12px 14px;
+
+  box-sizing: border-box;
+
+  color: #26384a;
+
+  background: #f8f9fa;
+
+  border: 1px solid #cfd2d6;
+
+  border-radius: 8px;
+
+  font-family: inherit;
+
+  font-size: 0.95rem;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
 }
+
+
+.input::placeholder {
+  color: #9a9da2;
+}
+
+
+.input:hover {
+  background: #ffffff;
+
+  border-color: #b9bdc2;
+}
+
+
+.input:focus {
+  background: #ffffff;
+
+  border-color: #e59a18;
+
+  box-shadow:
+    0 0 0 3px rgba(229, 154, 24, 0.12);
+}
+
+
+/* =========================================
+   BUTTON
+   ========================================= */
 
 .button {
-  background-color: #007bff;
-  color: #fff;
-  padding: 0.75rem;
+  width: 100%;
+
+  margin-top: 8px;
+
+  padding: 13px 18px;
+
+  color: #ffffff;
+
+  background: #e59a18;
+
   border: none;
-  border-radius: 4px;
+
+  border-radius: 8px;
+
+  font-family: inherit;
+
+  font-size: 0.98rem;
+
+  font-weight: 700;
+
   cursor: pointer;
-  transition: background-color 0.2s ease;
+
+  box-shadow:
+    0 5px 12px rgba(229, 154, 24, 0.2);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
+
 .button:hover {
-  background-color: #0056b3;
+  background: #d1840e;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 17px rgba(229, 154, 24, 0.27);
+}
+
+
+.button:active {
+  transform: translateY(0);
+}
+
+
+.button:disabled {
+  opacity: 0.55;
+
+  cursor: not-allowed;
+
+  transform: none;
+
+  box-shadow: none;
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 520px) {
+
+  .container {
+    width: calc(100% - 24px);
+
+    margin: 35px auto;
+
+    padding: 24px 20px;
+
+    border-radius: 12px;
+  }
+
+  .heading {
+    font-size: 1.6rem;
+
+    margin-bottom: 25px;
+  }
+
 }

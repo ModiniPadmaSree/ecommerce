@@ -45,8 +45,9 @@ const cartItems = JSON.parse(
   const applyCoupon = () => {
     const coupon = coupons.find((c) => c.code === selectedCoupon);
     if (coupon) {
-      const discountAmount = (coupon.discount / 100) * itemsPrice;
-      setDiscount(discountAmount);
+const discountAmount =
+  (coupon.discountPercent / 100) * itemsPrice;
+        setDiscount(discountAmount);
     } else {
       alert('Invalid coupon code');
       setDiscount(0);
@@ -149,26 +150,35 @@ const cartItems = JSON.parse(
       </section>
 
       <section className={styles.section}>
-        <h4>Apply Coupon:</h4>
-        <select
-          value={selectedCoupon}
-          onChange={(e) => setSelectedCoupon(e.target.value)}
-          className={styles.couponSelect}
-        >
-          <option value="">-- Select Coupon --</option>
-          {coupons.map((c) => (
-            <option key={c.code} value={c.code}>
-              {c.code} - {c.discount}% off
-            </option>
-          ))}
-        </select>
-        <button onClick={applyCoupon} className={styles.button}>
-          Apply
-        </button>
-        {discount > 0 && (
-          <p style={{ color: 'green' }}>Discount Applied: -${discount.toFixed(2)}</p>
-        )}
-      </section>
+  <h4>Apply Coupon:</h4>
+
+  <select
+    value={selectedCoupon}
+    onChange={(e) => setSelectedCoupon(e.target.value)}
+    className={styles.couponSelect}
+  >
+    <option value="">-- Select Coupon --</option>
+
+    {coupons.map((c) => (
+      <option key={c.code} value={c.code}>
+        {c.code} - {c.discountPercent}% off
+      </option>
+    ))}
+  </select>
+
+  <button
+    onClick={applyCoupon}
+    className={styles.button}
+  >
+    Apply
+  </button>
+
+  {discount > 0 && (
+    <p style={{ color: 'green' }}>
+      Discount Applied: -${discount.toFixed(2)}
+    </p>
+  )}
+</section>
 
       <section className={styles.section}>
         <h4>Order Summary:</h4>

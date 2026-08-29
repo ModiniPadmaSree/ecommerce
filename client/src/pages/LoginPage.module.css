@@ -1,90 +1,305 @@
+/* =========================================
+   NEXMART - LOGIN PAGE
+   ========================================= */
+
 .pageWrapper {
+  min-height: calc(100vh - 80px);
+
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 3rem 1rem;
-  min-height: 80vh;
-  background-color: #121212;
-  color: #e0e0e0;
-  font-family: 'Georgia', serif;
+
+  padding: 45px 20px 65px;
+
+  box-sizing: border-box;
+
+  background: #e5e6e8;
+
+  color: #26384a;
+
+  font-family: inherit;
 }
+
+
+/* =========================================
+   LOGIN CARD
+   ========================================= */
 
 .formBox {
-  background-color: #1e1e1e;
-  padding: 2.5rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
-  width: 100%;
-  max-width: 420px;
+  width: min(420px, 100%);
+
+  padding: 34px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #d0d2d5;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 8px 24px rgba(36, 59, 83, 0.12);
 }
 
+
+/* =========================================
+   HEADING
+   ========================================= */
+
 .heading {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 2rem;
+  position: relative;
+
+  margin: 0 0 32px;
+
+  padding-bottom: 15px;
+
+  color: #26384a;
+
   text-align: center;
-  color: #f4c430;
+
+  font-size: 1.9rem;
+
+  font-weight: 700;
+
+  letter-spacing: -0.3px;
 }
+
+
+.heading::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  width: 120px;
+  height: 2px;
+
+  transform: translateX(-50%);
+
+  background: #5b5d60;
+}
+
+
+.heading::before {
+  content: "";
+
+  position: absolute;
+  z-index: 1;
+
+  left: 50%;
+  bottom: -2px;
+
+  width: 50px;
+  height: 5px;
+
+  transform: translateX(-50%);
+
+  background: #e59a18;
+
+  border-radius: 5px;
+}
+
+
+/* =========================================
+   LABEL
+   ========================================= */
 
 .label {
   display: block;
-  color: #cccccc;
-  font-weight: bold;
+
+  margin-bottom: 7px;
+
+  color: #26384a;
+
   font-size: 0.9rem;
-  margin-bottom: 0.5rem;
+
+  font-weight: 700;
 }
+
+
+/* =========================================
+   INPUT
+   ========================================= */
 
 .input {
   width: 100%;
-  padding: 0.6rem 1rem;
-  margin-bottom: 1.2rem;
-  border: 1px solid #444;
+
+  padding: 12px 14px;
+
+  margin-bottom: 19px;
+
+  box-sizing: border-box;
+
+  color: #26384a;
+
+  background: #f8f9fa;
+
+  border: 1px solid #cfd2d6;
+
   border-radius: 8px;
-  background-color: #2a2a2a;
-  color: #f0f0f0;
-  font-size: 0.95rem;
-  transition: border-color 0.3s ease;
+
+  font-family: inherit;
+
+  font-size: 0.94rem;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
+
+.input::placeholder {
+  color: #9a9da2;
+}
+
+
+.input:hover {
+  background: #ffffff;
+
+  border-color: #b9bdc2;
+}
+
+
 .input:focus {
-  border-color: #3b82f6;
+  background: #ffffff;
+
+  border-color: #e59a18;
+
+  box-shadow:
+    0 0 0 3px rgba(229, 154, 24, 0.12);
+
   outline: none;
 }
 
+
+/* =========================================
+   LOGIN BUTTON
+   ========================================= */
+
 .button {
   width: 100%;
-  padding: 0.75rem;
-  background-color: #3b82f6;
-  color: #fff;
-  font-weight: bold;
-  font-size: 1rem;
+
+  padding: 13px 18px;
+
+  margin-top: 4px;
+
+  color: #ffffff;
+
+  background: #e59a18;
+
   border: none;
+
   border-radius: 8px;
+
+  font-family: inherit;
+
+  font-size: 0.98rem;
+
+  font-weight: 700;
+
   cursor: pointer;
-  transition: background-color 0.3s ease;
+
+  box-shadow:
+    0 5px 12px rgba(229, 154, 24, 0.2);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
+
 
 .button:hover {
-  background-color: #2563eb;
+  background: #d1840e;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 17px rgba(229, 154, 24, 0.27);
 }
+
+
+.button:active {
+  transform: translateY(0);
+}
+
 
 .button:disabled {
-  background-color: #555;
+  background: #9b9c9f;
+
   cursor: not-allowed;
+
+  transform: none;
+
+  box-shadow: none;
+
+  opacity: 0.65;
 }
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
 
 .footerText {
-  margin-top: 1.5rem;
+  margin: 22px 0 0;
+
+  color: #6b7076;
+
   text-align: center;
-  font-size: 0.95rem;
-  color: #cccccc;
+
+  font-size: 0.9rem;
+
+  line-height: 1.5;
 }
+
 
 .footerText a {
-  color: #4da6ff;
+  color: #d88912;
+
+  font-weight: 700;
+
   text-decoration: none;
+
+  transition: color 0.2s ease;
 }
 
+
 .footerText a:hover {
+  color: #b96f08;
+
   text-decoration: underline;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 480px) {
+
+  .pageWrapper {
+    min-height: calc(100vh - 60px);
+
+    padding: 30px 12px 45px;
+  }
+
+  .formBox {
+    padding: 25px 20px;
+
+    border-radius: 12px;
+  }
+
+  .heading {
+    font-size: 1.65rem;
+
+    margin-bottom: 27px;
+  }
+
 }

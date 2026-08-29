@@ -1,92 +1,315 @@
+/* =========================================
+   NEXMART - REGISTER PAGE
+   ========================================= */
+
 .registerContainer {
-  min-height: 100vh;
+  min-height: calc(100vh - 80px);
+
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #e5e7eb, #d1d5db, #9ca3af);
-  padding: 20px;
+
+  padding: 45px 20px 65px;
+
+  box-sizing: border-box;
+
+  background: #e5e6e8;
 }
+
+
+/* =========================================
+   REGISTER CARD
+   ========================================= */
 
 .registerCard {
-  background: rgba(255, 255, 255, 0.95);
-  padding: 40px;
-  width: 100%;
-  max-width: 420px;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(8px);
-  transition: 0.3s ease;
+  width: min(420px, 100%);
+
+  padding: 34px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #d0d2d5;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 8px 24px rgba(36, 59, 83, 0.12);
+
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
+
 
 .registerCard:hover {
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  box-shadow:
+    0 10px 28px rgba(36, 59, 83, 0.14);
 }
 
+
+/* =========================================
+   REGISTER TITLE
+   ========================================= */
+
 .registerTitle {
+  position: relative;
+
+  margin: 0 0 32px;
+
+  padding-bottom: 15px;
+
+  color: #26384a;
+
   text-align: center;
-  font-size: 28px;
-  font-weight: 600;
-  margin-bottom: 30px;
-  color: #1f2937;
+
+  font-size: 1.9rem;
+
+  font-weight: 700;
+
+  letter-spacing: -0.3px;
 }
+
+
+/* Grey divider */
+
+.registerTitle::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  width: 120px;
+  height: 2px;
+
+  transform: translateX(-50%);
+
+  background: #5b5d60;
+}
+
+
+/* Orange accent */
+
+.registerTitle::before {
+  content: "";
+
+  position: absolute;
+  z-index: 1;
+
+  left: 50%;
+  bottom: -2px;
+
+  width: 50px;
+  height: 5px;
+
+  transform: translateX(-50%);
+
+  background: #e59a18;
+
+  border-radius: 5px;
+}
+
+
+/* =========================================
+   LABEL
+   ========================================= */
 
 .registerLabel {
   display: block;
-  font-size: 14px;
-  margin-bottom: 6px;
-  color: #4b5563;
-  font-weight: 500;
+
+  margin-bottom: 7px;
+
+  color: #26384a;
+
+  font-size: 0.9rem;
+
+  font-weight: 700;
 }
+
+
+/* =========================================
+   INPUT
+   ========================================= */
 
 .registerInput {
   width: 100%;
+
   padding: 12px 14px;
-  margin-bottom: 20px;
+
+  margin-bottom: 19px;
+
+  box-sizing: border-box;
+
+  color: #26384a;
+
+  background: #f8f9fa;
+
+  border: 1px solid #cfd2d6;
+
   border-radius: 8px;
-  border: 1px solid #d1d5db;
-  background-color: #f3f4f6;
-  font-size: 14px;
-  transition: all 0.3s ease;
+
+  font-family: inherit;
+
+  font-size: 0.94rem;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-.registerInput:focus {
-  outline: none;
-  border-color: #6b7280;
-  box-shadow: 0 0 0 2px rgba(107, 114, 128, 0.3);
-  background-color: #ffffff;
+
+.registerInput::placeholder {
+  color: #9a9da2;
 }
+
+
+.registerInput:hover {
+  background: #ffffff;
+
+  border-color: #b9bdc2;
+}
+
+
+.registerInput:focus {
+  background: #ffffff;
+
+  border-color: #e59a18;
+
+  box-shadow:
+    0 0 0 3px rgba(229, 154, 24, 0.12);
+
+  outline: none;
+}
+
+
+/* =========================================
+   REGISTER BUTTON
+   ========================================= */
 
 .registerButton {
   width: 100%;
-  padding: 12px;
+
+  padding: 13px 18px;
+
+  margin-top: 4px;
+
+  color: #ffffff;
+
+  background: #e59a18;
+
   border: none;
+
   border-radius: 8px;
-  background-color: #374151;
-  color: white;
-  font-size: 15px;
-  font-weight: 500;
+
+  font-family: inherit;
+
+  font-size: 0.98rem;
+
+  font-weight: 700;
+
   cursor: pointer;
-  transition: 0.3s ease;
+
+  box-shadow:
+    0 5px 12px rgba(229, 154, 24, 0.2);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
+
 
 .registerButton:hover {
-  background-color: #1f2937;
+  background: #d1840e;
+
   transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 17px rgba(229, 154, 24, 0.27);
 }
+
+
+.registerButton:active {
+  transform: translateY(0);
+}
+
+
+.registerButton:disabled {
+  background: #9b9c9f;
+
+  cursor: not-allowed;
+
+  transform: none;
+
+  box-shadow: none;
+
+  opacity: 0.65;
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
 
 .registerFooter {
-  margin-top: 25px;
+  margin: 22px 0 0;
+
+  color: #6b7076;
+
   text-align: center;
-  font-size: 14px;
-  color: #4b5563;
+
+  font-size: 0.9rem;
+
+  line-height: 1.5;
 }
+
 
 .registerLink {
-  color: #1f2937;
-  font-weight: 500;
+  color: #d88912;
+
+  font-weight: 700;
+
   text-decoration: none;
+
+  transition: color 0.2s ease;
 }
 
+
 .registerLink:hover {
+  color: #b96f08;
+
   text-decoration: underline;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 480px) {
+
+  .registerContainer {
+    min-height: calc(100vh - 60px);
+
+    padding: 30px 12px 45px;
+  }
+
+  .registerCard {
+    padding: 25px 20px;
+
+    border-radius: 12px;
+  }
+
+  .registerTitle {
+    font-size: 1.65rem;
+
+    margin-bottom: 27px;
+  }
+
 }
