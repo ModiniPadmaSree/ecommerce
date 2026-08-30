@@ -103,7 +103,7 @@ const OrderDetailsPage = () => {
             <span>Total Amount</span>
 
             <strong className={styles.totalAmount}>
-              ₹{order.totalPrice}
+              ${order.totalPrice}
             </strong>
           </div>
 
@@ -249,7 +249,7 @@ const OrderDetailsPage = () => {
 
                     <p>
                       <span>Price</span>
-                      ₹{item.price}
+                      ${item.price}
                     </p>
 
 
@@ -263,7 +263,7 @@ const OrderDetailsPage = () => {
                       <span>Total</span>
 
                       <strong>
-                        ₹{item.price * item.quantity}
+                        ${item.price * item.quantity}
                       </strong>
                     </p>
 
